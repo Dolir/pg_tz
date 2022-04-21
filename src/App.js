@@ -1,18 +1,17 @@
 import React from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Main from "./views/Main"
+import Home from "./views/home/Home"
 import News from "./views/news"
-import NewsPage from "./views/news/NewsPage"
-import Navbar from "./components/Navbar"
+import Navbar from "./components/layout/navbar"
+import RoutesWithTransition from "./components/layout/RoutesWithTransition"
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
+      <RoutesWithTransition>
+        <Route path="/" element={<Home />}></Route>
         <Route path="news" element={<News />}></Route>
-        <Route path="news/:id" element={<NewsPage />}></Route>
-      </Routes>
+      </RoutesWithTransition>
     </BrowserRouter>
   )
 }

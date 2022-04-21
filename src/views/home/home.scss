@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - $navbarHeight);
+  .home__title {
+    cursor: pointer;
+    user-select: none;
+    height: 110px;
+    font-size: 100px;
+  }
+}

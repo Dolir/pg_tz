@@ -1,16 +1,23 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "./index.css"
 import App from "./App"
 import { store } from "./app/store"
 import { Provider } from "react-redux"
+import { QueryClient, QueryClientProvider } from "react-query"
+import './fake-db'
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./styles/index.scss"
+const Index = () => {
+  const client = new QueryClient()
+  return (
+    <React.StrictMode>
+      <QueryClientProvider client={client}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </QueryClientProvider>
+    </React.StrictMode>
+  )
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById("root")
-)
+ReactDOM.render(<Index />, document.getElementById("root"))
