@@ -6,6 +6,5 @@ export default {
 
   tokenType: 'Bearer',
 
-  storageTokenKeyName: 'access',
-  storageRefreshTokenKeyName: 'refresh'
+  storageTokenKeyName: 'accessToken',
 }

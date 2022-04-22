@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom"
 import ModalLogin from "./ModalLogin"
 import { ReactComponent as LogoIcon } from "../assets/logo.svg"
 import { ReactComponent as LogoNoTextIcon } from "../assets/logoNoText.svg"
-
 import './navbar.scss'
 const Navbar = () => {
-  return (
+  
+  return (  
     <nav>
       <NavLink to="/">
         <LogoNoTextIcon title="Главная" className="d-block d-md-none"/>

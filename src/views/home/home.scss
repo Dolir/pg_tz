@@ -1,13 +1,37 @@
 @import "../../styles/variables.scss";
+@import "bootstrap/scss/bootstrap"; // Bootstrap core
+
 .home {
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - $navbarHeight);
   .home__title {
+    @include media-breakpoint-down(md) {
+      font-size: 60px;
+    }
+
     cursor: pointer;
     user-select: none;
     height: 110px;
     font-size: 100px;
+  }
+  .home-title {
+    .home-title__container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .trail {
+      justify-content: center;
+      div:has(div:has(.trail__divider)){
+        width: 100%;
+      }
+      .trail__divider {
+        margin: 0 2rem;
+        @include media-breakpoint-down(md) {
+          width: 100%;
+        }
+      }
+    }
   }
 }

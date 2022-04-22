@@ -1,4 +1,5 @@
 @import "bootstrap/scss/bootstrap.scss";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -19,5 +20,21 @@ a {
   color: unset;
   &:hover {
     color: unset;
+  }
+}
+
+.content {
+  margin: 0 3rem;
+  margin-bottom: 5rem;
+  @include media-breakpoint-down(md) {
+    margin: 0 1.5rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.no-default-shadow {
+  &:focus {
+    border-color: rgb(0, 0, 0) !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25) !important;
   }
 }

@@ -1,20 +1,24 @@
-@import '../../../styles/variables.scss';
-nav{
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    align-items: center;
-    height: $navbarHeight;
+@import "../../../styles/variables.scss";
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  z-index: 1;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  height: $navbarHeight;
 
-    & > * {
-        cursor: pointer;
-    }
-    & > :first-child{
-        display: flex;
-        flex: 1;
-        justify-content: flex-end;
-    }
-    & > :last-child{
-        flex: 1;
-    }
+  & > * {
+    cursor: pointer;
+  }
+  & > :first-child {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  & > :last-child {
+    flex: 1;
+  }
 }

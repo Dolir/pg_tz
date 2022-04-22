@@ -1,27 +1,19 @@
-import React, { useState } from "react"
+import React from "react"
 import "./home.scss"
-import Trail from "../../components/utility/Trail"
-const Home = () => {
-  const isAuthenticated = false
-  const [open, setOpen] = useState(true)
-  return (
-    <div className="home">
-      <h1 className="home__title" onClick={() => setOpen(!open)}>
-        <Trail
-          open={open}
-        >
-          {"Привет".split('').map((letter) => letter)}
-          <div className="mx-3"></div>
-          {"Админ!".split('').map((letter) => <span className="text-danger">{letter}</span>)}
 
-        </Trail>
-      </h1>
+import AnimatedTitle from "./AnimatedTitle"
+import { useSelector } from "react-redux"
+const Home = () => {
+  const auth = useSelector((state) => state.auth)
+  const title = auth.isAuthenticated ? auth.userData.username : "Гость"
+  return (
+    <div className="home content">
+      <AnimatedTitle title={title} />
     </div>
   )
 }
 
 export default Home
-
 
 // export default function App() {
 //   const [open, set] = useState(true)
