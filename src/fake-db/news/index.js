@@ -80,7 +80,7 @@ mock.onGet("/news").reply(async (request) => {
   )
   //Икусственная задержка
   await new Promise((res) => {
-    setTimeout(() => res(), 2000)
+    setTimeout(() => res(), 1000)
   })
   return [200, result]
 })
