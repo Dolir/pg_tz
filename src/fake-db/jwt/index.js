@@ -6,13 +6,7 @@ const data = {
       id: 1,
       username: "Админ",
       password: "1234",
-      role: "admin",
-      ability: [
-        {
-          action: "manage",
-          subject: "all"
-        }
-      ]
+      role: "admin"
     },
     {
       id: 2,
