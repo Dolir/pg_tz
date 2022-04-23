@@ -6,6 +6,7 @@ import { useEffect } from "react"
 import LayoutWrapper from "../components/layout/LayoutWrapper"
 import { useDispatch } from "react-redux"
 import { toggleModal } from "../redux/layout/layoutSlice"
+
 const Redirect = ({ to = "/" }) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -15,10 +16,11 @@ const Redirect = ({ to = "/" }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 }
+//Тут есть возможность создавать авторизирванные роуты
 const Router = () => {
-  // Так оно ренедрится, не трогать
   // eslint-disable-next-line no-unused-vars
   const location = useLocation()
+
   const resolveFinalRoute = (route) => {
     if (route.auth && !isUserLoggedIn()) return <Redirect />
     return <route.component />

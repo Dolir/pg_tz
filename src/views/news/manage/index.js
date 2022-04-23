@@ -4,11 +4,11 @@ import ModalCreate from "./ModalCreate"
 import ModalResolve from "./ModalResolve"
 
 const ManageNews = () => {
-  const userData = useSelector((state) => state.auth.userData)
-  const isAdmin = userData.role === "admin"
+  const auth = useSelector((state) => state.auth)
+  const isAdmin = auth.userData?.role === "admin"
   return (
     <div className="news__manage">
-      <ModalCreate />
+      {auth.isAuthenticated && <ModalCreate />}
       {isAdmin && <ModalResolve />}
     </div>
   )

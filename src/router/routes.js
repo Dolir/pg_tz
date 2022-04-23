@@ -8,8 +8,7 @@ const Routes = [
 
   {
     path: "/news",
-    component: News,
-    auth: true
+    component: News
   }
 ]
 export default Routes

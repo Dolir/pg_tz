@@ -13,9 +13,9 @@ const AnimatedTitle = ({ title = "Гость" }) => {
 
   return (
     <h1 className="home__title home-title" onClick={handleAnimate}>
-      <Delayed waitBeforeShow={500}>
+      <Delayed waitBeforeShow={800}>
         <Trail open={open} className="home-title__container trail">
-          {"Привет".split("").map((letter) => letter)}
+          {"Привет,".split("").map((letter) => letter)}
           {"divider"}
           {`${title}!`.split("").map((letter, index) => (
             <span className="text-danger" key={letter + index}>
