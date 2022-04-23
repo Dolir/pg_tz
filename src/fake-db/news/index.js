@@ -66,7 +66,7 @@ const data = [
   }
 ]
 
-mock.onGet("/news").reply((request) => {
+mock.onGet("/news").reply(async (request) => {
   const searchValue = request.searchValue
 
   const regexEscape = (str) => {
@@ -78,5 +78,9 @@ mock.onGet("/news").reply((request) => {
   const result = data?.filter((option) =>
     searchRegex.test(option.title.toLowerCase())
   )
+  //Икусственная задержка
+  await new Promise((res) => {
+    setTimeout(() => res(), 2000)
+  })
   return [200, result]
 })

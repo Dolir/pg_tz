@@ -14,10 +14,12 @@ import { useDispatch, useSelector } from "react-redux"
 import Select from "react-select"
 import { formatDate } from "../../../utils/utility"
 import { addOneNews, removeInReview } from "../../../redux/news/newsSlice"
+import useUnscroll from "../../../utils/hooks/useUnscroll"
 const ModalResolve = () => {
   const dispatch = useDispatch()
 
   const [open, setOpen] = useState(false)
+  useUnscroll(open)
   const [selectedNews, setSelectedNews] = useState()
   const inReview = useSelector((state) => state.news.newsInReview)
   const handleModalClose = useCallback(() => {
@@ -41,13 +43,7 @@ const ModalResolve = () => {
         Проверить новости
       </Button>
       {open && (
-        <Modal
-          toggle={() => setOpen(!open)}
-          isOpen={open}
-          centered
-          fade={false}
-          size="xl"
-        >
+        <Modal toggle={() => setOpen(!open)} isOpen={open} centered size="xl">
           <ModalHeader
             close={<Button close onClick={handleModalClose}></Button>}
           >

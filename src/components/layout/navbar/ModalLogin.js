@@ -17,6 +17,7 @@ import { login as loginAction, logout } from "../../../redux/auth/authSlice"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { toggleModal } from "../../../redux/layout/layoutSlice"
+import useUnscroll from "../../../utils/hooks/useUnscroll"
 const ModalLogin = () => {
   const navigate = useNavigate()
   const [login, setLogin] = useState(null)
@@ -24,6 +25,7 @@ const ModalLogin = () => {
   const [error, setError] = useState("")
   const auth = useSelector((state) => state.auth)
   const open = useSelector((state) => state.layout.modalLogin)
+  useUnscroll(open)
   const dispatch = useDispatch()
 
   const loginMutation = useMutation((data) => jwtService.login(data), {
@@ -75,7 +77,6 @@ const ModalLogin = () => {
           toggle={() => dispatch(toggleModal(!open))}
           isOpen={open}
           centered
-          fade={false}
           onExit={clearForm}
         >
           <ModalHeader

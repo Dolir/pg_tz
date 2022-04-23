@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react"
 
+/** Хук для дебаунса*/
 const useDebounce = (callback, wait) => {
   const argsRef = useRef()
   const timeout = useRef()

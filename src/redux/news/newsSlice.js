@@ -18,7 +18,7 @@ export const newsSlice = createSlice({
       state.newsItems = action.payload
     },
     addInReview: (state, action) => {
-      state.newsInReview.push(action.payload)
+      state.newsInReview.unshift(action.payload)
       localStorage.setItem("inReview", JSON.stringify(state.newsInReview))
     },
     removeInReview: (state, action) => {
@@ -28,7 +28,7 @@ export const newsSlice = createSlice({
       localStorage.setItem("inReview", JSON.stringify(state.newsInReview))
     },
     addOneNews: (state, action) => {
-      state.newsItems.push(action.payload)
+      state.newsItems.unshift(action.payload)
     }
   }
 })

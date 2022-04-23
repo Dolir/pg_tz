@@ -14,12 +14,14 @@ import {
 import { useDispatch } from "react-redux"
 import { addInReview } from "../../../redux/news/newsSlice"
 import useDebounce from "../../../utils/hooks/useDebounce"
+import useUnscroll from "../../../utils/hooks/useUnscroll"
 const ModalCreate = () => {
   const [title, setTitle] = useState(null)
   const [text, setText] = useState(null)
   const [success, setSuccess] = useState("")
   const [error, setError] = useState("")
   const [open, setOpen] = useState(false)
+  useUnscroll(open)
   const dispatch = useDispatch()
 
   const handleModalClose = useCallback(() => {
@@ -97,7 +99,6 @@ const ModalCreate = () => {
           toggle={() => setOpen(!open)}
           isOpen={open}
           centered
-          fade={false}
           onExit={clearForm}
         >
           <ModalHeader

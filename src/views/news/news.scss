@@ -1,3 +1,5 @@
+@import "bootstrap/scss/bootstrap.scss";
+
 .news {
   display: flex;
   flex-direction: column;
@@ -17,16 +19,17 @@
     margin-top: 5rem;
   }
   .news__list {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 1rem;
     display: grid;
-    margin-bottom: 10px;
     break-inside: avoid;
     width: 100%;
     list-style: none;
     padding: 0;
     margin: 0;
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
   }
   .news-list {
     .news-list__item {
@@ -41,7 +44,7 @@
         border: 1px solid rgba(0, 0, 0, 0.102);
       }
       .news-item__title {
-        height: 60px;
+        height: 56px;
         max-width: fit-content;
         overflow: hidden;
         text-overflow: ellipsis;

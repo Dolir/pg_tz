@@ -23,7 +23,7 @@ const NewsList = () => {
   }, [data, dispatch, newsQuery.isLoading, newsQuery.isSuccess])
 
   return (
-    <div className="news">
+    <div className="news w-100">
       <Input
         className="news__input no-default-shadow "
         placeholder="Поиск..."
@@ -37,6 +37,9 @@ const NewsList = () => {
             <NewsItem data={news} key={news.title + index} />
           ))}
         </ul>
+      )}
+      {data?.length === 0 && (
+        <h2 className="w-100 text-center">Ничего не найдено</h2>
       )}
     </div>
   )
